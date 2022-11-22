@@ -107,21 +107,6 @@ function App() {
     getOrientation: d => [0, d.angle, 0],
     getScale: d => [250,250,250]
   });
-
-  /*
-  const vectors = getVectorsFromPositions(mesh.positions);
-
-  const points = new PointCloudLayer({
-    id: 'point-cloud-layer',
-    data,
-    pickable: true,
-    coordinateOrigin: [0, 0],
-    radiusPixels: 4,
-    getPosition: vectors,
-    getNormal: [1,1,1],
-    getColor: d => [120,120,120]
-  });
-  */
   return (
     <div className="App">
       <DeckGL initialViewState={initialViewState} controller={true} layers={[terrain]} />

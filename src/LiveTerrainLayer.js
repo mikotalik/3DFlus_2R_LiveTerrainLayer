@@ -8,6 +8,16 @@ import fragment from './fragment.glsl';
 
 export default class LiveTerrainLayer extends SimpleMeshLayer{
 
+  draw({uniforms}) {
+    const {fontSmoothing, sizeScale} = this.props;
+
+    super.draw({
+      uniforms: Object.assign({}, uniforms, {
+        alpha : 1.0
+      })
+    });
+  }
+
   getShaders() {
     const transpileToGLSL100 = !isWebGL2(this.context.gl);
 
